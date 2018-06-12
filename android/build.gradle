@@ -1,6 +1,6 @@
-def DEFAULT_COMPILE_SDK_VERSION             = 23
-def DEFAULT_BUILD_TOOLS_VERSION             = "23.0.3"
-def DEFAULT_TARGET_SDK_VERSION              = 22
+def DEFAULT_COMPILE_SDK_VERSION             = 27
+def DEFAULT_BUILD_TOOLS_VERSION             = "27.0.3"
+def DEFAULT_TARGET_SDK_VERSION              = 23
 def DEFAULT_GOOGLE_PLAY_SERVICES_VERSION    = "+"
 
 
@@ -23,28 +23,28 @@ allprojects {
 apply plugin: 'com.android.library'
 
 android {
-    compileSdkVersion 23
-    buildToolsVersion "23.0.3"
+    compileSdkVersion 27
+    buildToolsVersion "27.0.3"
 
     defaultConfig {
         minSdkVersion 16
-        targetSdkVersion 22
+        targetSdkVersion 23
         versionCode 1
         versionName "1.0"
         ndk {
             abiFilters "armeabi-v7a", "x86"
         }
     }
-
+    
     lintOptions {
         abortOnError false
     }
 }
 
 dependencies {
-    def googlePlayServicesVersion = project.hasProperty('googlePlayServicesVersion') ? project.googlePlayServicesVersion : DEFAULT_GOOGLE_PLAY_SERVICES_VERSION
-    compile fileTree(include: ['*.jar'], dir: 'libs')
-    compile "com.android.support:appcompat-v7:23.0.1"
-    compile "com.google.android.gms:play-services-auth:$googlePlayServicesVersion"
-    compile "com.facebook.react:react-native:+"
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    //noinspection GradleCompatible
+    api "com.android.support:appcompat-v7:27.1.1"
+    api 'com.google.android.gms:play-services-auth:9.2.1'
+    implementation "com.facebook.react:react-native:+"
 }
