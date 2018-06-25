@@ -40,15 +40,15 @@ class GoogleSigninButton extends Component {
 }
 
 GoogleSigninButton.Size = {
-  Icon: RNGoogleSignin.BUTTON_SIZE_ICON,
-  Standard: RNGoogleSignin.BUTTON_SIZE_STANDARD,
-  Wide: RNGoogleSignin.BUTTON_SIZE_WIDE
+	Icon: '48 x 48',
+	Standard: '230 x 48',
+	Wide: '312 x 48'
 };
-
+	
 GoogleSigninButton.Color = {
-  Auto: RNGoogleSignin.BUTTON_COLOR_AUTO,
-  Light: RNGoogleSignin.BUTTON_COLOR_LIGHT,
-  Dark: RNGoogleSignin.BUTTON_COLOR_DARK
+	Auto: 'white',
+	Light: 'blue',
+	Dark: 'grey'
 };
 
 class GoogleSigninError extends Error {
